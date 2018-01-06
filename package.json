@@ -1,0 +1,20 @@
+{
+  "name": "node-punctuation-stats",
+  "version": "1.0.0",
+  "description": "A small library for getting stats on punctuation in files. - Node Module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitfaf/node-punctuation-stats.git"
+  },
+  "keywords": ["punctuation"],
+  "author": "Git Faf <git.faf@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gitfaf/node-punctuation-stats/issues"
+  },
+  "homepage": "https://github.com/gitfaf/node-punctuation-stats#readme"
+}
