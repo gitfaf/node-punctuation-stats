@@ -20,6 +20,19 @@ A small library for getting stats on punctuation in files. - Node Module
     total: 39,
     message: 'Found 39 punctuations of 6 types: ! ? . , ; :'
   }
+  p.inDir('./', '.js')
+  [
+    {
+      file: 'index.js',
+      found:
+      {
+        punctuations: [Array],
+        found: [Array],
+        total: 50,
+        message: 'Found 50 punctuations of 6 types: ! ? . , ; :'
+      }
+    }
+  ]
 
 ```
 

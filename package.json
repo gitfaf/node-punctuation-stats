@@ -1,6 +1,6 @@
 {
   "name": "node-punctuation-stats",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A small library for getting stats on punctuation in files. - Node Module",
   "main": "index.js",
   "scripts": {

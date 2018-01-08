@@ -21,6 +21,15 @@ class PunctuationStat {
       message: `Found ${total} punctuations of ${this.punctuations.length} types: ${this.punctuations.join(' ')}`
     }
   }
+  inDir(dirPath, fileExtension) {
+    const files = fs.readdirSync(dirPath).filter(name => name.endsWith(fileExtension))
+    return files.map(file => {
+      return {
+        file: file,
+        found: this.inFile(path.join(dirPath, file))
+      }
+    })
+  }
 }
 
 module.exports = PunctuationStat
