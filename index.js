@@ -2,11 +2,17 @@ const fs = require('fs')
 const path = require('path')
 
 class PunctuationStat {
+
   constructor(defaultPunctuationList = ['!', '?', '.', ',', ';', ':']) {
     this.punctuations = defaultPunctuationList
   }
+
   inFile(filePath) {
     const data = fs.readFileSync(filePath).toString()
+    return this.inText(data)
+  }
+
+  inText(data) {
     const found = this.punctuations.map(p => {
       return {
         symbol: p,
@@ -14,6 +20,7 @@ class PunctuationStat {
       }
     })
     const total = found.reduce((acc, curr) => acc + curr.count, 0)
+
     return {
       punctuations: this.punctuations,
       found: found,
@@ -21,6 +28,7 @@ class PunctuationStat {
       message: `Found ${total} punctuations of ${this.punctuations.length} types: ${this.punctuations.join(' ')}`
     }
   }
+
   inDir(dirPath, fileExtension) {
     const files = fs.readdirSync(dirPath).filter(name => name.endsWith(fileExtension))
     return files.map(file => {
