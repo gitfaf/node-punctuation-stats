@@ -7,19 +7,36 @@ A small library for getting stats on punctuation in files. - Node Module
 ```javascript
 
   var PS = require('node-punctuation-stats')
+
   var p = new PS()
+
   p.inFile('./index.js')
   { punctuations: [ '!', '?', '.', ',', ';', ':' ],
     found:
     [ { symbol: '!', count: 1 },
       { symbol: '?', count: 1 },
-      { symbol: '.', count: 16 },
+      { symbol: '.', count: 17 },
       { symbol: ',', count: 12 },
       { symbol: ';', count: 1 },
       { symbol: ':', count: 8 } ],
-    total: 39,
-    message: 'Found 39 punctuations of 6 types: ! ? . , ; :'
+    total: 40,
+    message: 'Found 40 punctuations of 6 types: ! ? . , ; :'
   }
+
+  const data = fs.readFileSync('./index.js').toString()
+  p.inText(data)
+  { punctuations: [ '!', '?', '.', ',', ';', ':' ],
+    found:
+    [ { symbol: '!', count: 1 },
+      { symbol: '?', count: 1 },
+      { symbol: '.', count: 17 },
+      { symbol: ',', count: 12 },
+      { symbol: ';', count: 1 },
+      { symbol: ':', count: 8 } ],
+    total: 40,
+    message: 'Found 40 punctuations of 6 types: ! ? . , ; :'
+  }
+
   p.inDir('./', '.js')
   [
     {
